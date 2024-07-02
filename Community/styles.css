@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-image: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+.title {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'sans-serif';
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 1px rgb(2, 2, 2);
+}
+
+.title2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'sans-serif';
+  font-style: italic;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.title3 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'sans-serif';
+  font-style: italic;
+  letter-spacing: 0.7px;
+  color: rgb(20, 161, 255);
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  background-color: #333;
+}
+
+.btn:hover {
+  color: rgb(255, 255, 255);}
+
+.btn.active {
+  color: rgb(255, 255, 255);
+
+}
+
+.btn.active:hover {
+  color: white;;
+}
+
+
+/*expanded image*/
+
+.close {
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close:hover {
+  float:right;
+  background-color: rgb(20, 161, 255);
+  color: #666;
+}
+
+
+img {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+
+#expandedImgDiv {
+  position: absolute;
+  top: 40%;
+  background-color: white;
+  border-radius: 10px;
+  display: none;
+  border: 1px solid #333;
+}
+
+#expandedImg {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+
+.rate {
+  display: flex;
+  width: 100%;
+  padding:8px 12px;
+}
+
+.ratings {
+  font-size: 14px;
+  color: #333;
+}
+
+.stars {
+  width: 100%;
+  color: #333;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.checked {
+  color: rgb(255, 72, 0);
+}
+
+.filterDiv {
+height:200px;
+}
+
+.filterDiv img {
+  width: 100%;
+  height: 100%;
+}
+
+/*hover zoom*/
+.filterDiv:hover {
+  animation: zoomin 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomin {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+
+/* The "show" class is added to the filtered elements */
+.filterDiv.show {
+  display: block;
+}
+
+
+
+.show {
+  display: block;
+}
+
+
+.filter-box {
+ display: flex;
+ gap:20px;
+}
+
+
+#myBtnContainer {
+  margin-top: 30px;
+  width: 600px;
+}
+
+/* Style for main css */
+@media screen and (max-width: 800px) {
+body {
+  font-size: 0.6em;
+  }
+
+  #myBtnContainer {
+    width: 400px;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  #expandedImg {
+    display:none;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}

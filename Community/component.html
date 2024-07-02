@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Comicverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Community/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/20.png">
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+  <span class="title">Comic</span> <br>
+  <span class="title2">Gall</span> <span class="title3">ery</span>
+<hr>
+
+<style>
+    /* Add your CSS styles here */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    .column {
+      flex: 33.33%;
+      max-width: 33.33%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+      cursor: pointer;
+    }
+    
+    .btn {
+      border: none;
+      outline: none;
+      padding: 10px 16px;
+      background-color: #e42f2f;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: #e42f2f;
+    }
+    
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+    
+    #expandedImgDiv {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      padding-top: 60px;
+    }
+    
+    #expandedImg {
+      margin: auto;
+      display: block;
+      width: 50%;
+      max-width: 700px;
+    }
+    
+    #imgtext {
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+    }
+    
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .rate {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .stars {
+      display: inline-block;
+    }
+    
+    .stars .fa {
+      font-size: 20px;
+    }
+    
+    .stars .checked {
+      color: orange;
+    }
+    
+    .btnclose {
+      text-align: center;
+      margin-top: 10px;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">Show all</button>
+      <button class="btn" onclick="filterSelection('Action')">Action</button>
+      <button class="btn" onclick="filterSelection('Horror')">Horror</button>
+      <button class="btn" onclick="filterSelection('Mysterious')">Mysterious</button>
+    </div>
+    
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column Action">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/10.jpeg" alt="" style="width:100%">
+         <h5>Sky Warriors - Action Theme</h5>
+          <p>"Sky Warriors" is an action-packed comic about a team of elite pilots who protect the world from sky-high threats.</p>
+          <p>Their thrilling battles against sky pirates and rogue drones keep readers on the edge of their seats.</p>
+        </div>
+      </div>
+      <div class="column Action">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/12.jpeg" alt="" style="width:100%">
+          <h5>Urban Ninjas - Action Theme</h5>
+          <p>"Urban Ninjas" follows a group of modern-day ninjas who fight crime in a bustling city.</p>
+          <p>With their incredible martial arts skills and high-tech gadgets, they take down dangerous criminals and save the day.</p>
+        </div>
+      </div>
+      <div class="column Action">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/CnyUtmH5C0N1AKWAdswnt.jpeg" alt="" style="width:100%">
+          <h5>Mecha Guardians - Action Theme</h5>
+          <p>In "Mecha Guardians," giant robots piloted by brave heroes defend Earth from alien invasions.</p>
+          <p>The comic is full of epic battles and high-stakes missions that test the limits of the guardians' courage and teamwork.</p>
+        </div>
+      </div>
+      
+      <div class="column Horror">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/13.jpeg" alt="" style="width:100%">
+          <h5>Haunted Manor - Horror Theme</h5>
+          <p>"Haunted Manor" tells the story of a group of friends who spend a night in an old, eerie mansion.</p>
+          <p>They soon discover that the house is filled with ghosts and dark secrets, leading to terrifying encounters.</p>
+        </div>
+      </div>
+      <div class="column Horror">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/14.jpeg" alt="" style="width:100%">
+          <h5>Night Creatures - Horror Theme</h5>
+          <p>"Night Creatures" is a chilling comic about a small town plagued by mysterious creatures that come out after dark.</p>
+          <p>The townspeople must band together to uncover the truth and survive the night.</p>
+        </div>
+      </div>
+      <div class="column Horror">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/15.jpeg" alt="" style="width:100%">
+          <h5>The Cursed Mirror - Horror Theme</h5>
+          <p>In "The Cursed Mirror," a young woman buys an antique mirror that turns out to be haunted.</p>
+          <p>As strange and horrifying events unfold, she must find a way to break the curse before it's too late.</p>
+        </div>
+      </div>
+    
+      <div class="column Mysterious">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/16.jpeg" alt="" style="width:100%">
+          <h5>The Enigma Files - Mysterious Theme</h5>
+          <p>"The Enigma Files" follows a detective who specializes in solving unusual cases.</p>
+          <p>Each comic presents a new mystery, filled with cryptic clues, strange occurrences, and unexpected twists.</p>
+        </div>
+      </div>
+      <div class="column Mysterious">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/14.jpeg" alt="" style="width:100%">
+          <h5>The Secret Society - Mysterious Theme</h5>
+          <p>"The Secret Society" is about a group of young investigators who uncover a hidden society with dark intentions.</p>
+          <p>Their journey to unravel the society's secrets is full of intrigue and suspense.</p>
+        </div>
+      </div>
+      <div class="column Mysterious">
+        <div class="content">
+          <img class="filterDiv" onclick="myFunction(this);" src="/assets/images/11.jpeg" alt="" style="width:100%">
+          <h5>Whispers in the Shadows - Mysterious Theme</h5>
+          <p>"Whispers in the Shadows," a journalist stumbles upon a series of hidden events.</p>
+          <p>she uncovers a web of mysteries that challenge her vision of reality.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="expandedImgDiv" style="display:none;">
+      <span class="close" onclick="closeImg()">&times;</span>
+      <img id="expandedImg">
+      <div id="imgtext"></div>
+      <div class="rate">
+        <div class="stars">
+          <span class="ratings">Rating: (18336)</span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+      </div>
+      <div class="btnclose">
+        <button class="btn close" onclick="closeImg()">Close</button>
+      </div>
+    </div>
+    
+    <script>
+    function filterSelection(category) {
+      var elements, i;
+      elements = document.getElementsByClassName("column");
+      if (category == "all") category = "";
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.display = elements[i].className.indexOf(category) > -1 ? "block" : "none";
+      }
+    }
+    
+    function myFunction(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.src;
+      imgText.innerHTML = imgs.nextElementSibling.innerHTML;
+      expandImg.parentElement.style.display = "block";
+    }
+    
+    function closeImg() {
+      document.getElementById("expandedImgDiv").style.display = "none";
+    }
+    </script>
+</body>
+<script src="/Community/script.js"></script>
+</html>
